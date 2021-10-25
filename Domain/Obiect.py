@@ -8,13 +8,16 @@ def creareObiect(ID, nume, descriere, pretAchizitie, locatie):
     :param locatie:str
     :return:un dictionar pentru obiect
     '''
-    return {
+    '''return {
         'id': ID,
         'nume': nume,
         'descriere': descriere,
         'pretAchizitie': pretAchizitie,
         'locatie': locatie
     }
+    '''
+    obiect = [ID, nume, descriere, pretAchizitie, locatie]
+    return obiect
 
 
 """obiect = creareObiect(1, "stilou", "italian", 10, "Roma")
@@ -23,23 +26,24 @@ print(obiect['id'])
 
 
 def getID(obiect):
-    return obiect['id']
-
+    #return obiect['id']
+    return obiect[0]
 
 def getNume(obiect):
-    return obiect['nume']
-
+    #return obiect['nume']
+    return obiect[1]
 
 def getDescriere(obiect):
-    return obiect['descriere']
-
+    #return obiect['descriere']
+    return obiect[2]
 
 def getPretAchizitie(obiect):
-    return obiect['pretAchizitie']
-
+    #return obiect['pretAchizitie']
+    return obiect[3]
 
 def getLocatie(obiect):
-    return obiect['locatie']
+    #return obiect['locatie']
+    return obiect[4]
 
 def toString(obiect):
     return "ID:{} nume:{} descriere:{} pretAchizitie:{} locatie:{}".format(
