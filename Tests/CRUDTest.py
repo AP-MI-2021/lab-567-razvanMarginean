@@ -28,8 +28,10 @@ def testStergereObiect():
     l = adaugareObiect(2, "pix", "italian", 5, "Roma", l)
 
     l = stergereObiect(1, l)
+
     assert (len(l)) == 1
     assert (getByID(1, l)) is None
+    assert (getByID(2,l)) == [2, "pix", "italian", 5, "Roma"]
     '''assert (getByID(2, l)) == {
         'id': 2,
         'nume': 'pix',
@@ -41,10 +43,12 @@ def testStergereObiect():
 
 def testModificareObiect():
     l = []
-    l = adaugareObiect(1, "stilou", "italian", 10, "Roma", l)
-    l = adaugareObiect(2, "pix", "italian", 5, "Roma", l)
+    l = adaugareObiect(0, "stilou", "italian", 10, "Roma", l)
+    l = adaugareObiect(1, "pix", "italian", 5, "Roma", l)
 
-    l = modificareObiect(2, "pixx", "italiann", 55, "Romaa", l)
+    l = modificareObiect(1, "pixx", "italiann", 55, "Romaa", l)
+
+    assert(getByID(1, l)) == [1, 'pixx', 'italiann', 55, 'Romaa']
 
     '''assert (getByID(2, l)) == {
         'id': 2,
