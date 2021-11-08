@@ -17,6 +17,10 @@ def adaugareObiect(ID, nume, descriere, pretAchizitie, locatie, lista):
     :param lista: lista de dictionare
     :return:o lista de obiecte de tip dictionar
     '''
+    if getByID(ID, lista) is not None:
+        raise ValueError("Id-ul exista deja")
+    if len(locatie) != 4:
+        raise ValueError("Locatia introdusa trebuie sa contina exact 4 caractere")
     obiect = creareObiect(ID, nume, descriere, pretAchizitie, locatie)
     lista = lista + [obiect]
     return lista
@@ -28,6 +32,8 @@ def stergereObiect(ID, lista):
     :param lista: lista de dictionare
     :return: o lista de dictionare
     '''
+    if getByID(ID, lista) is None:
+        raise ValueError("Nu exista prajitura cu Id-ul dat")
     listaNoua = []
     for obiect in lista:
         if getID(obiect) != ID:
@@ -46,6 +52,8 @@ def modificareObiect(ID, nume, descriere, pretAchizitie, locatie, lista):
     :param lista: lista de dictionare
     :return: returneaza o lista de dictionare modificata
     '''
+    if getByID(ID, lista) is None:
+        raise ValueError("Nu exista prajitura cu Id-ul dat")
     listaNoua = []
     for obiect in lista:
         if getID(obiect) == ID:
