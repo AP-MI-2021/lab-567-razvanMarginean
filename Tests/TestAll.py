@@ -3,7 +3,7 @@ from Tests.CRUDTest import testGetById, testAdaugareObiect, testStergereObiect, 
 from Tests.DomainTest import testCreeareObiect
 from Tests.FunctionalitatiTeste import testMutareInAltaLocatie, testconcatenareString, testCelMaiMarePret, \
     testOrdonareCrescDupaPret, testSumePreturiPtLocatie
-
+from Tests.TestUndoRedo import TestUndoRedo
 
 
 def TestAll():
@@ -17,3 +17,5 @@ def TestAll():
     testCelMaiMarePret()
     testOrdonareCrescDupaPret()
     testSumePreturiPtLocatie()
+
+    TestUndoRedo()

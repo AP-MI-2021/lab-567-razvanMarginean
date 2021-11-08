@@ -53,7 +53,7 @@ def modificareObiect(ID, nume, descriere, pretAchizitie, locatie, lista):
     :return: returneaza o lista de dictionare modificata
     '''
     if getByID(ID, lista) is None:
-        raise ValueError("Nu exista prajitura cu Id-ul dat")
+        raise ValueError("Nu exista obiect cu Id-ul dat")
     listaNoua = []
     for obiect in lista:
         if getID(obiect) == ID:
